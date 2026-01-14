@@ -1,0 +1,139 @@
+/* =========================================================
+   RAINGAIA OVERRIDES (SCOPED)
+   - Globalis CSS'e dokunmaz
+   - Sadece RAINGAIA görünümü/premium hissi
+   ========================================================= */
+
+/* -------------------------
+   Tokens (güvenli, sınırlı)
+------------------------- */
+.raingaia {
+  --rg-accent: #0f2a44;      /* deep blue */
+  --rg-accent-soft: #1b3f63;
+  --rg-ink: #0b1220;
+  --rg-muted: rgba(11,18,32,.65);
+  --rg-border: rgba(11,18,32,.12);
+}
+
+/* -------------------------
+   Header / Brand
+------------------------- */
+.raingaia #navbar {
+  transition: background .25s ease, box-shadow .25s ease, backdrop-filter .25s ease;
+}
+
+.raingaia .brand {
+  letter-spacing: .14em;
+  font-weight: 600;
+}
+
+.raingaia #navbar nav a {
+  opacity: .85;
+}
+.raingaia #navbar nav a:hover {
+  opacity: 1;
+}
+
+/* Scroll state (main.js is-scrolled basıyor) */
+.raingaia #navbar.is-scrolled {
+  background: rgba(255,255,255,.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+/* -------------------------
+   Buttons
+------------------------- */
+.raingaia .btn-header,
+.raingaia .btn-primary {
+  border-radius: 12px;
+  letter-spacing: .06em;
+}
+
+.raingaia .btn-primary {
+  background: linear-gradient(135deg, var(--rg-accent), var(--rg-accent-soft));
+}
+.raingaia .btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(15,42,68,.25);
+}
+
+/* -------------------------
+   Hero
+------------------------- */
+.raingaia .hero h1 {
+  letter-spacing: .01em;
+}
+.raingaia .hero p {
+  color: var(--rg-muted);
+  max-width: 52ch;
+}
+
+/* -------------------------
+   Cards
+------------------------- */
+.raingaia .card {
+  border: 1px solid var(--rg-border);
+  border-radius: 18px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.raingaia .card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(15,42,68,.22);
+  box-shadow: 0 22px 40px rgba(0,0,0,.08);
+}
+.raingaia .card h3 {
+  letter-spacing: .02em;
+}
+
+/* -------------------------
+   Editorial cards
+------------------------- */
+.raingaia .article-card {
+  border-radius: 18px;
+  border: 1px solid var(--rg-border);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.raingaia .article-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(0,0,0,.08);
+}
+
+/* -------------------------
+   Forms
+------------------------- */
+.raingaia .clean-input {
+  border-radius: 12px;
+}
+.raingaia .clean-input:focus {
+  border-color: var(--rg-accent);
+  box-shadow: 0 0 0 3px rgba(15,42,68,.12);
+}
+
+/* -------------------------
+   Reveal FAIL-SAFE (kritik)
+   - JS çalışmasa bile içerik kaybolmasın
+------------------------- */
+.raingaia .reveal { opacity: 1; transform: none; }
+.raingaia .reveal.reveal--init { opacity: 0; transform: translateY(14px); }
+.raingaia .reveal.active,
+.raingaia .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* -------------------------
+   Footer
+------------------------- */
+.raingaia footer {
+  border-top: 1px solid var(--rg-border);
+}
+.raingaia .footer-brand {
+  letter-spacing: .12em;
+}
+
+/* -------------------------
+   Small screens
+------------------------- */
+@media (max-width: 768px) {
+  .raingaia .hero h1 {
+    font-size: clamp(2.1rem, 7vw, 2.6rem);
+  }
+}
